@@ -16,4 +16,10 @@ jobs:
     - name: run
       run: |
         make -f Makefile.mingw
+        
+        
+    - uses: actions/upload-artifact@v3
+      with:
+       name: my-artifact
+       path: .
     
