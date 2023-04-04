@@ -3,16 +3,15 @@ name: Build
 on: workflow_dispatch
 
 jobs:
-
-  build:
-
-  steps:
-  - name: Set up MinGW
-    uses: egor-tensin/setup-mingw@v2
-    with:
-      platform: x64
+ build:
+   runs-on: [ubuntu-latest]
+   steps:
+    - name: Set up MinGW
+      uses: egor-tensin/setup-mingw@v2
+      with:
+        platform: x64
       
-  - name: run
-    run: |
-      make -f Makefile.mingw
+    - name: run
+      run: |
+        make -f Makefile.mingw
     
